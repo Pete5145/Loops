@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+    <button id="btn">Get Sum of numbersx</button>
+     <button id="btn3">Multiplication table</button>
+     <button id="btn4">Prime Numbers</button>
+     <button id="btn5">Print next 20 leap years</button>
+</body>
+
+<script>
+    let btn = document.getElementById("btn");
+    let btn3 = document.getElementById("btn3");
+    let btn4 = document.getElementById("btn4");
+    let btn5 = document.getElementById("btn5");
+
+    btn.addEventListener("click", getSumNum);
+    btn3.addEventListener("click", multiplicationTable);
+    btn4.addEventListener("click", getPrimeNumber);
+    btn5.addEventListener("click", getLeapYear);
+    
+    
+    function getSumNum( ) {
+      let userNum = parseInt(prompt("Please enter a number?"));
+
+
+     
+
+      for ( let num = 1; i <= 20; i++){
+             sum = userNum + num;
+      }
+
+      document.write(`The sum of numbers from 1 - ${userNum} is ${sum}`);
+    }
+    
+    
+function multiplicationTable() {
+
+    for (let i = 1; i <= 12; i++){
+        for (let j = 1; j <= 12; j++ ){
+            document.write(i*j);
+        }
+        document.write("<br>");
+    }
+}
+    
+    function getPrimeNumber( ) {
+        for (var counter = 0; counter <= 100; counter++){
+            var notPrime = false;
+            for (let i = 2; i <= counter; i++){
+                if(counter%i===0 && i!==counter){
+                    notPrime = true;
+            }
+        }
+        if (notPrime === false){
+            document.write(`${counter} <br>`);
+        }
+    }
+}
+
+function  getLeapYear( ) {
+    let yearsPrinted = 0;
+    let currentYear = 2021;
+
+    while (yearsPrinted < 30 ) {
+        if ((currentYear % 4 === 0) && (!((currentYear % 100===0) && (currentYear % 400 !== 0)))) {
+            document.write(`${currentYear}<br>`);
+            yearsPrinted++;
+            currentYear++;
+        }
+        else{
+            currentYear++;
+        }
+    }
+
+
+}
+
+</script>
+</html>
